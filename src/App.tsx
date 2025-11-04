@@ -1,0 +1,27 @@
+import Header from './components/Header';
+import Hero from './components/Hero';
+import ExpertiseBar from './components/ExpertiseBar';
+import Services from './components/Services';
+import CollaborativeNetwork from './components/CollaborativeNetwork';
+import KnowMyHealth from './components/KnowMyHealth';
+import About from './components/About';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+
+function App() {
+  return (
+    <div className="min-h-screen bg-white">
+      <Header />
+      <Hero />
+      <ExpertiseBar />
+      <Services />
+      <CollaborativeNetwork />
+      <KnowMyHealth />
+      <About />
+      <Contact />
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
