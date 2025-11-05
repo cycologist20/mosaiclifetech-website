@@ -1,5 +1,5 @@
 export default function ExpertiseBar() {
-  const expertise = ['FHIR', 'ONC Compliance', 'Da Vinci Workgroups', 'KeyHIE Architecture', 'AI Governance'];
+  const expertise = ['FHIR', 'ONC Compliance', 'Da Vinci Workgroups', 'HIE Architecture', 'AI Governance'];
 
   return (
     <section className="bg-white py-12 border-b border-slate-200">

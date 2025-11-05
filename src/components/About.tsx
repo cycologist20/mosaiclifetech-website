@@ -31,8 +31,22 @@ export default function About() {
               key={founder.name}
               className="bg-slate-50 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
             >
-              <div className="aspect-[4/3] bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center">
-                <User className="w-32 h-32 text-slate-400" />
+              <div className="aspect-[4/3] bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center overflow-hidden">
+                {founder.name === 'Teresa Younkin, MSHI' ? (
+                  <img 
+                    src="/Teresa Headshot WHA DC.png" 
+                    alt="Teresa Younkin, MSHI - CEO"
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                ) : founder.name === 'Jim Younkin, MBA' ? (
+                  <img 
+                    src="/Jim Headshot.jpg" 
+                    alt="Jim Younkin, MBA - CTO"
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                ) : (
+                  <User className="w-32 h-32 text-slate-400" />
+                )}
               </div>
               <div className="p-8">
                 <div className="mb-2">

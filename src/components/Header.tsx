@@ -32,14 +32,19 @@ export default function Header() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-white shadow-md py-4' : 'bg-transparent py-6'
+          isScrolled ? 'bg-white shadow-md py-4' : 'py-6'
         }`}
+        style={{ backgroundColor: isScrolled ? '#ffffff' : '#E0E0E0' }}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <a href="#" className="text-2xl font-bold text-slate-900">
-                Mosaic Life Tech
+              <a href="#" className="flex items-center">
+                <img 
+                  src="/mosaic_life_tech_logo_transparent2.png" 
+                  alt="Mosaic Life Tech Logo" 
+                  className="h-12 md:h-15 lg:h-18 w-auto logo-hover"
+                />
               </a>
             </div>
 
@@ -48,7 +53,10 @@ export default function Header() {
                 <button
                   key={link.href}
                   onClick={() => scrollToSection(link.href)}
-                  className="text-slate-700 hover:text-slate-900 transition-colors text-sm font-medium tracking-wide"
+                  className="transition-colors text-base font-medium tracking-wide"
+                  style={{ color: '#2d2d2d', fontWeight: '600' }}
+                  onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = '#1a1a1a'}
+                  onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = '#2d2d2d'}
                 >
                   {link.label}
                 </button>
@@ -57,14 +65,18 @@ export default function Header() {
 
             <button
               onClick={() => scrollToSection('#contact')}
-              className="hidden lg:block bg-teal-600 text-white px-6 py-2.5 rounded-md hover:bg-teal-700 transition-colors text-sm font-medium tracking-wide"
+              className="hidden lg:block text-white px-6 py-2.5 rounded-md transition-colors text-base font-medium tracking-wide"
+              style={{ backgroundColor: '#E89A3C' }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#d4881f'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E89A3C'}
             >
               Contact for Partnership
             </button>
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden text-slate-900"
+              className="lg:hidden"
+              style={{ color: '#1a1a1a' }}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -73,20 +85,26 @@ export default function Header() {
       </header>
 
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-white lg:hidden">
+        <div className="fixed inset-0 z-40 lg:hidden" style={{ backgroundColor: '#E0E0E0' }}>
           <div className="flex flex-col items-center justify-center h-full space-y-8">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
-                className="text-2xl text-slate-900 hover:text-teal-600 transition-colors"
+                className="text-2xl transition-colors"
+                style={{ color: '#1a1a1a', fontWeight: '700' }}
+                onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = '#2A5B69'}
+                onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = '#1a1a1a'}
               >
                 {link.label}
               </button>
             ))}
             <button
               onClick={() => scrollToSection('#contact')}
-              className="bg-teal-600 text-white px-8 py-3 rounded-md hover:bg-teal-700 transition-colors text-lg"
+              className="text-white px-8 py-3 rounded-md transition-colors text-lg"
+              style={{ backgroundColor: '#E89A3C' }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#d4881f'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E89A3C'}
             >
               Contact for Partnership
             </button>
