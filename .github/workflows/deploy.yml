@@ -1,0 +1,42 @@
+name: 🚀 Deploy Static Website to S3 + CloudFront
+
+on:
+  push:
+    branches:
+      - main # Only run the deployment when code is pushed to the 'main' branch
+
+env:
+  S3_BUCKET_NAME: mosaiclifetech.com
+  CLOUDFRONT_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+  AWS_REGION: us-east-1
+  BUILD_DIRECTORY: dist 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🧾 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🛠️ Install Dependencies & Build
+        run: |
+          npm install 
+          npm run build # Runs the command that populates your 'dist' folder
+
+      - name: 📤 Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: 🔄 Sync Files to S3 Bucket
+        run: |
+          aws s3 sync ${{ env.BUILD_DIRECTORY }} s3://${{ env.S3_BUCKET_NAME }}/ --delete 
+
+      - name: 🚨 Invalidate CloudFront Cache
+        # Forces CloudFront to fetch the new files immediately
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ env.CLOUDFRONT_ID }} \
+            --paths "/*"
