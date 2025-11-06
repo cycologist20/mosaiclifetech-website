@@ -12,7 +12,7 @@ export default function About() {
       name: 'Jim Younkin, MBA',
       title: 'CTO',
       subtitle: 'Visionary Technologist & HIE Architect',
-      bio: 'Architect of KeyHIE and leader of federal ONC/CDC initiatives. Building resilient, scalable, and compliant Health IT infrastructure. Pioneer in health information exchange and interoperability solutions.',
+      bio: 'Founder and architect of the Keystone Health Information Exchange and leader of several ONC initiatives. Building resilient, scalable, and compliant Health IT infrastructure. Pioneer in health information exchange and interoperability solutions.',
     },
   ];
 
@@ -21,7 +21,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            50+ Years of Health IT, Interoperability, and AI Leadership
+            40+ Years of Health IT, Interoperability, and AI Leadership
           </h2>
         </div>
 

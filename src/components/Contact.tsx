@@ -20,21 +20,27 @@ export default function Contact() {
                 <Mail className="w-6 h-6 text-teal-600" />
               </div>
               <h3 className="font-semibold text-slate-900 mb-2">Email</h3>
-              <p className="text-slate-600">contact@mosaiclifetech.com</p>
+              <p className="text-slate-600">teresa@mosaiclifetech.com</p>
+              <p className="text-slate-600">jim@mosaiclifetech.com</p>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Linkedin className="w-6 h-6 text-teal-600" />
               </div>
               <h3 className="font-semibold text-slate-900 mb-2">Connect</h3>
-              <p className="text-slate-600">LinkedIn</p>
+              <a href="https://www.linkedin.com/in/teresayounkin" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-teal-600 transition-colors block">
+                linkedin.com/in/teresayounkin
+              </a>
+              <a href="https://www.linkedin.com/in/jimryounkin/" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-teal-600 transition-colors block">
+                linkedin.com/in/jimryounkin
+              </a>
             </div>
             <div className="text-center">
               <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-6 h-6 text-teal-600" />
               </div>
               <h3 className="font-semibold text-slate-900 mb-2">Location</h3>
-              <p className="text-slate-600">United States</p>
+              <p className="text-slate-600">Chesapeake, VA</p>
             </div>
           </div>
 
