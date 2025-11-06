@@ -14,6 +14,9 @@ export default {
       height: {
         '15': '3.75rem', // 60px
         '18': '4.5rem',  // 72px
+        '48': '12rem',   // 192px (4x of h-12)
+        '60': '15rem',   // 240px (4x of h-15)
+        '72': '18rem',   // 288px (4x of h-18)
       },
     },
   },

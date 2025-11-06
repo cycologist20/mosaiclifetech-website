@@ -41,9 +41,9 @@ export default function Header() {
             <div className="flex items-center">
               <a href="#" className="flex items-center">
                 <img 
-                  src="/mosaic_life_tech_logo_transparent2.png" 
+                  src="/Mosaic Life Tech  Logo2.svg" 
                   alt="Mosaic Life Tech Logo" 
-                  className="h-12 md:h-15 lg:h-18 w-auto logo-hover"
+                  className="h-48 md:h-60 lg:h-72 w-auto logo-hover"
                 />
               </a>
             </div>

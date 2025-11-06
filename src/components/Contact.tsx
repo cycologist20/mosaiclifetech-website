@@ -45,9 +45,14 @@ export default function Contact() {
           </div>
 
           <div className="text-center">
-            <button className="bg-teal-600 text-white px-10 py-4 rounded-md hover:bg-teal-700 transition-colors text-lg font-medium shadow-lg hover:shadow-xl">
+            <a 
+              href="https://on.sprintful.com/30-min-teresayounkin" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block bg-teal-600 text-white px-10 py-4 rounded-md hover:bg-teal-700 transition-colors text-lg font-medium shadow-lg hover:shadow-xl"
+            >
               Schedule a Consultation
-            </button>
+            </a>
           </div>
         </div>
       </div>
