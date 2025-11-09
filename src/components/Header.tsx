@@ -32,7 +32,7 @@ export default function Header() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-white shadow-md py-4' : 'py-6'
+          isScrolled ? 'bg-white shadow-md py-2' : 'py-3'
         }`}
         style={{ backgroundColor: isScrolled ? '#ffffff' : '#E0E0E0' }}
       >
@@ -43,7 +43,7 @@ export default function Header() {
                 <img 
                   src="/Mosaic Life Tech  Logo2.svg" 
                   alt="Mosaic Life Tech Logo" 
-                  className="h-48 md:h-60 lg:h-72 w-auto logo-hover"
+                  className="h-24 md:h-30 lg:h-36 w-auto logo-hover"
                 />
               </a>
             </div>
