@@ -1,6 +1,10 @@
 import { Heart, Database, Brain, Shield } from 'lucide-react';
 
-export default function KnowMyHealth() {
+interface KnowMyHealthProps {
+  onLearnMore?: () => void;
+}
+
+export default function KnowMyHealth({ onLearnMore }: KnowMyHealthProps) {
   const features = [
     { icon: Heart, text: 'Born from personal caregiving experience' },
     { icon: Database, text: 'FHIR-based health record aggregation' },
@@ -36,7 +40,10 @@ export default function KnowMyHealth() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-teal-600 text-white px-8 py-3 rounded-md hover:bg-teal-700 transition-colors font-medium">
+              <button 
+                onClick={onLearnMore}
+                className="bg-teal-600 text-white px-8 py-3 rounded-md hover:bg-teal-700 transition-colors font-medium"
+              >
                 Learn More
               </button>
               <button className="border-2 border-white text-white px-8 py-3 rounded-md hover:bg-white hover:text-slate-900 transition-colors font-medium">

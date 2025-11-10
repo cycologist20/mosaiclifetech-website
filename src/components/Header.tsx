@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
-export default function Header() {
+interface HeaderProps {
+  onBackToMain?: () => void;
+}
+
+export default function Header({ onBackToMain }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -63,15 +67,27 @@ export default function Header() {
               ))}
             </nav>
 
-            <button
-              onClick={() => scrollToSection('#contact')}
-              className="hidden lg:block text-white px-6 py-2.5 rounded-md transition-colors text-base font-medium tracking-wide"
-              style={{ backgroundColor: '#E89A3C' }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#d4881f'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E89A3C'}
-            >
-              Contact for Partnership
-            </button>
+{onBackToMain ? (
+              <button
+                onClick={onBackToMain}
+                className="hidden lg:block text-white px-6 py-2.5 rounded-md transition-colors text-base font-medium tracking-wide"
+                style={{ backgroundColor: '#2A5B69' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1e4a54'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2A5B69'}
+              >
+                ← Back to Main Site
+              </button>
+            ) : (
+              <button
+                onClick={() => scrollToSection('#contact')}
+                className="hidden lg:block text-white px-6 py-2.5 rounded-md transition-colors text-base font-medium tracking-wide"
+                style={{ backgroundColor: '#E89A3C' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#d4881f'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E89A3C'}
+              >
+                Contact for Partnership
+              </button>
+            )}
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -99,15 +115,27 @@ export default function Header() {
                 {link.label}
               </button>
             ))}
-            <button
-              onClick={() => scrollToSection('#contact')}
-              className="text-white px-8 py-3 rounded-md transition-colors text-lg"
-              style={{ backgroundColor: '#E89A3C' }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#d4881f'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E89A3C'}
-            >
-              Contact for Partnership
-            </button>
+{onBackToMain ? (
+              <button
+                onClick={onBackToMain}
+                className="text-white px-8 py-3 rounded-md transition-colors text-lg"
+                style={{ backgroundColor: '#2A5B69' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1e4a54'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2A5B69'}
+              >
+                ← Back to Main Site
+              </button>
+            ) : (
+              <button
+                onClick={() => scrollToSection('#contact')}
+                className="text-white px-8 py-3 rounded-md transition-colors text-lg"
+                style={{ backgroundColor: '#E89A3C' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#d4881f'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E89A3C'}
+              >
+                Contact for Partnership
+              </button>
+            )}
           </div>
         </div>
       )}
