@@ -1,6 +1,10 @@
+import { useEffect } from 'react';
 import { CheckCircle } from 'lucide-react';
 
 export default function KnowMyHealthVision() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#E0E0E0' }}>
       {/* Section 1: Hero */}
