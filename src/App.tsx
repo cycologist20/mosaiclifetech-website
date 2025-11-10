@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import ExpertiseBar from './components/ExpertiseBar';
@@ -12,13 +12,40 @@ import Footer from './components/Footer';
 
 function App() {
   const [showKnowMyHealthVision, setShowKnowMyHealthVision] = useState(false);
+  const [pendingSection, setPendingSection] = useState<string | null>(null);
+
+  const handleNavigateToSection = (section: string) => {
+    setPendingSection(section);
+    setShowKnowMyHealthVision(false);
+  };
+
+  const handleBackToMain = () => {
+    setPendingSection(null);
+    setShowKnowMyHealthVision(false);
+  };
+
+  // Handle scrolling to section after returning to main page
+  useEffect(() => {
+    if (!showKnowMyHealthVision && pendingSection) {
+      setTimeout(() => {
+        const element = document.querySelector(pendingSection);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+        setPendingSection(null);
+      }, 100); // Small delay to ensure DOM is ready
+    }
+  }, [showKnowMyHealthVision, pendingSection]);
 
   if (showKnowMyHealthVision) {
     return (
       <div className="min-h-screen">
-        <Header onBackToMain={() => setShowKnowMyHealthVision(false)} />
+        <Header 
+          onBackToMain={handleBackToMain}
+          onNavigateToSection={handleNavigateToSection}
+        />
         <KnowMyHealthVision />
-        <Footer />
+        <Footer onNavigateToSection={handleNavigateToSection} />
       </div>
     );
   }

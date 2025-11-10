@@ -1,4 +1,8 @@
-export default function Footer() {
+interface FooterProps {
+  onNavigateToSection?: (section: string) => void;
+}
+
+export default function Footer({ onNavigateToSection }: FooterProps) {
   const navLinks = [
     { label: 'Services', href: '#services' },
     { label: 'Collaborative Network', href: '#network' },
@@ -7,9 +11,15 @@ export default function Footer() {
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (onNavigateToSection) {
+      // We're on the vision page, navigate back to main page and scroll to section
+      onNavigateToSection(href);
+    } else {
+      // We're on the main page, scroll normally
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 

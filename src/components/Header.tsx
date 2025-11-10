@@ -3,9 +3,10 @@ import { Menu, X } from 'lucide-react';
 
 interface HeaderProps {
   onBackToMain?: () => void;
+  onNavigateToSection?: (section: string) => void;
 }
 
-export default function Header({ onBackToMain }: HeaderProps) {
+export default function Header({ onBackToMain, onNavigateToSection }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -25,10 +26,17 @@ export default function Header({ onBackToMain }: HeaderProps) {
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (onNavigateToSection) {
+      // We're on the vision page, navigate back to main page and scroll to section
+      onNavigateToSection(href);
       setIsMobileMenuOpen(false);
+    } else {
+      // We're on the main page, scroll normally
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setIsMobileMenuOpen(false);
+      }
     }
   };
 
