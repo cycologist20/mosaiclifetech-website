@@ -55,7 +55,7 @@ export default function Header({ onBackToMain, onNavigateToSection }: HeaderProp
                 <img 
                   src="/Mosaic Life Tech  Logo2.svg" 
                   alt="Mosaic Life Tech Logo" 
-                  className="h-16 sm:h-20 md:h-30 lg:h-36 w-auto logo-hover"
+                  className="h-48 sm:h-60 md:h-30 lg:h-36 w-auto logo-hover"
                 />
               </a>
             </div>
@@ -110,18 +110,7 @@ export default function Header({ onBackToMain, onNavigateToSection }: HeaderProp
 
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-40 lg:hidden" style={{ backgroundColor: '#E0E0E0' }}>
-          <div className="flex flex-col h-full">
-            {/* Logo at top of mobile menu */}
-            <div className="flex items-center justify-center pt-20 pb-8">
-              <img 
-                src="/Mosaic Life Tech  Logo2.svg" 
-                alt="Mosaic Life Tech Logo" 
-                className="h-20 w-auto logo-hover"
-              />
-            </div>
-            
-            {/* Navigation links centered */}
-            <div className="flex flex-col items-center justify-center flex-1 space-y-8">
+          <div className="flex flex-col items-center justify-center h-full space-y-8">
             {navLinks.map((link) => (
               <button
                 key={link.href}
@@ -155,7 +144,6 @@ export default function Header({ onBackToMain, onNavigateToSection }: HeaderProp
                 Contact for Partnership
               </button>
             )}
-            </div>
           </div>
         </div>
       )}
