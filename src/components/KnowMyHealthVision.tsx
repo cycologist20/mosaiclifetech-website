@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function KnowMyHealthVision() {
   useEffect(() => {
@@ -175,14 +176,15 @@ export default function KnowMyHealthVision() {
             begins today with a crucial first step—a new tool designed to solve the "storytelling" 
             part of the problem.
           </p>
-          <button
-            className="text-white px-10 py-4 rounded-md transition-colors text-lg font-medium tracking-wide shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+          <Link
+            to="/health-stories"
+            className="inline-block text-white px-10 py-4 rounded-md transition-colors text-lg font-medium tracking-wide shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
             style={{ backgroundColor: '#E89A3C' }}
             onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#d4881f'}
             onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E89A3C'}
           >
-            Coming Soon: HealthStories
-          </button>
+            Learn about our Health Stories app
+          </Link>
         </div>
       </section>
     </div>

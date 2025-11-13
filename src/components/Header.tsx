@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface HeaderProps {
   onBackToMain?: () => void;
@@ -22,6 +23,7 @@ export default function Header({ onBackToMain, onNavigateToSection }: HeaderProp
     { label: 'Services', href: '#services' },
     { label: 'Collaborative Network', href: '#network' },
     { label: 'KnowMyHealth', href: '#knowmyhealth' },
+    { label: 'Health Stories', href: '/health-stories', isRoute: true },
     { label: 'About Us', href: '#about' },
   ];
 
@@ -51,27 +53,40 @@ export default function Header({ onBackToMain, onNavigateToSection }: HeaderProp
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <a href="#" className="flex items-center">
+              <Link to="/" className="flex items-center">
                 <img 
                   src="/Mosaic Life Tech  Logo2.svg" 
                   alt="Mosaic Life Tech Logo" 
                   className="h-48 sm:h-60 md:h-30 lg:h-36 w-auto logo-hover"
                 />
-              </a>
+              </Link>
             </div>
 
             <nav className="hidden lg:flex items-center space-x-8">
               {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => scrollToSection(link.href)}
-                  className="transition-colors text-base font-medium tracking-wide"
-                  style={{ color: '#2d2d2d', fontWeight: '600' }}
-                  onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = '#1a1a1a'}
-                  onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = '#2d2d2d'}
-                >
-                  {link.label}
-                </button>
+                link.isRoute ? (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className="transition-colors text-base font-medium tracking-wide"
+                    style={{ color: '#2d2d2d', fontWeight: '600' }}
+                    onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = '#1a1a1a'}
+                    onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = '#2d2d2d'}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <button
+                    key={link.href}
+                    onClick={() => scrollToSection(link.href)}
+                    className="transition-colors text-base font-medium tracking-wide"
+                    style={{ color: '#2d2d2d', fontWeight: '600' }}
+                    onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = '#1a1a1a'}
+                    onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = '#2d2d2d'}
+                  >
+                    {link.label}
+                  </button>
+                )
               ))}
             </nav>
 
@@ -112,16 +127,30 @@ export default function Header({ onBackToMain, onNavigateToSection }: HeaderProp
         <div className="fixed inset-0 z-40 lg:hidden" style={{ backgroundColor: '#E0E0E0' }}>
           <div className="flex flex-col items-center justify-center h-full space-y-8">
             {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="text-2xl transition-colors"
-                style={{ color: '#1a1a1a', fontWeight: '700' }}
-                onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = '#2A5B69'}
-                onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = '#1a1a1a'}
-              >
-                {link.label}
-              </button>
+              link.isRoute ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-2xl transition-colors"
+                  style={{ color: '#1a1a1a', fontWeight: '700' }}
+                  onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = '#2A5B69'}
+                  onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = '#1a1a1a'}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <button
+                  key={link.href}
+                  onClick={() => scrollToSection(link.href)}
+                  className="text-2xl transition-colors"
+                  style={{ color: '#1a1a1a', fontWeight: '700' }}
+                  onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.color = '#2A5B69'}
+                  onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.color = '#1a1a1a'}
+                >
+                  {link.label}
+                </button>
+              )
             ))}
 {onBackToMain ? (
               <button
