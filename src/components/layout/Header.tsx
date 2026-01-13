@@ -20,9 +20,15 @@ export function Header() {
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5 flex items-center gap-3">
             <MosaicLogo />
-            <span className="hidden sm:block text-sm font-semibold text-navy tracking-tight">
-              MOSAIC LIFE TECH
-            </span>
+            <div className="hidden sm:flex items-center gap-2">
+              <span className="text-sm font-semibold text-navy tracking-tight">
+                MOSAIC LIFE TECH
+              </span>
+              <span className="hidden lg:inline text-muted-foreground/60">|</span>
+              <span className="hidden lg:inline text-xs italic text-muted-foreground">
+                Healthcare AI. Governed with clarity.
+              </span>
+            </div>
           </Link>
         </div>
         

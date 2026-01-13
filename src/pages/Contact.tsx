@@ -54,9 +54,12 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-b from-secondary/50 to-background">
         <div className="container-narrow text-center">
-          <h1 className="text-navy mb-6">Start with a Conversation</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            No pitch, no pressure — just clarity on what your organization needs. Schedule a 30-minute introductory call to discuss your governance challenges and explore whether Mosaic can help.
+          <h1 className="text-navy mb-4">Let's Talk</h1>
+          <p className="text-lg italic text-muted-foreground mb-6">
+            Healthcare AI. Governed with clarity.
+          </p>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Whether you're preparing for board questions, responding to emerging Joint Commission guidance, or simply want to understand your organization's AI governance posture — we're here to help.
           </p>
         </div>
       </section>

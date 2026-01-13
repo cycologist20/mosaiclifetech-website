@@ -133,6 +133,9 @@ const About = () => {
             <br />
             We help executives see it that way."
           </blockquote>
+          <p className="text-xl text-primary font-semibold text-center mt-8">
+            That's why we focus on one thing: AI governance you can defend.
+          </p>
         </div>
       </section>
 
@@ -141,7 +144,7 @@ const About = () => {
         <div className="container-narrow text-center">
           <h2 className="text-navy-foreground mb-6">Ready to Work Together?</h2>
           <p className="text-xl text-navy-foreground/80 mb-8 max-w-2xl mx-auto">
-            Let's discuss how we can help your organization build defensible AI governance.
+            Let's discuss how we can help you build AI governance you can defend.
           </p>
           <Button variant="cta" size="xl" asChild>
             <Link to="/contact">Start a Conversation</Link>

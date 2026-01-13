@@ -9,24 +9,15 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-b from-secondary/50 to-background section-padding">
         <div className="container-narrow text-center">
-          <h1 className="text-navy mb-6 animate-fade-in">
-            AI Governance for Healthcare Leaders Who Can't Afford to Get It Wrong
+          <h1 className="text-primary text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
+            AI governance you can defend.
           </h1>
-          <p className="text-xl md:text-2xl text-foreground/80 mb-4 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            We help healthcare executives build board-visible AI governance — before emerging expectations become required standards.
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            We help healthcare executives build governance clarity that boards can see, surveyors can assess, and leaders can stand behind.
           </p>
-          <p className="text-base text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            Independent advisory for C-suites and boards navigating the Joint Commission and CHAI guidance era.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <Button variant="hero" asChild>
-              <Link to="/contact">Schedule a Conversation</Link>
-            </Button>
-            <Button variant="textLink" asChild>
-              <a href="#" className="flex items-center gap-2">
-                Download: &quot;5 Questions Your Board Will Ask About AI&quot;
-                <ArrowRight className="h-4 w-4" />
-              </a>
+              <Link to="/contact">Start a Conversation</Link>
             </Button>
           </div>
         </div>
