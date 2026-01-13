@@ -14,9 +14,15 @@ export function Footer() {
       <div className="container-wide section-padding-sm">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo and Copyright */}
-          <div className="flex items-center gap-3">
-            <MosaicLogoSmall />
-            <div className="text-sm text-muted-foreground">
+          <div className="flex flex-col gap-1">
+            <div className="flex items-center gap-3">
+              <MosaicLogoSmall />
+              <span className="text-sm font-semibold text-foreground">MOSAIC LIFE TECH</span>
+            </div>
+            <p className="text-sm italic text-muted-foreground/80">
+              Healthcare AI. Governed with clarity.
+            </p>
+            <div className="text-xs text-muted-foreground mt-1">
               © {new Date().getFullYear()} Mosaic Life Tech, LLC
             </div>
           </div>

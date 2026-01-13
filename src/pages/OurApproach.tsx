@@ -35,6 +35,9 @@ const OurApproach = () => {
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-b from-secondary/50 to-background">
         <div className="container-narrow text-center">
+          <p className="text-sm uppercase tracking-widest text-primary font-medium mb-4">
+            AI Governance You Can Defend
+          </p>
           <h1 className="text-navy mb-6">Governance as Decision Integrity</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             We don't treat governance as a compliance exercise or a technical project. We treat it as a leadership discipline — the practice of making AI-influenced decisions visible, accountable, and defensible.
