@@ -29,11 +29,13 @@ const About = () => {
         <div className="container-narrow">
           <div className="space-y-16">
             {/* Teresa */}
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
-              <div className="flex-shrink-0 w-full lg:w-64">
-                <div className="w-48 h-48 mx-auto lg:mx-0 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <span className="text-5xl font-bold text-primary">TY</span>
-                </div>
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+              <div className="flex-shrink-0">
+                <img
+                  src="/images/teresa-younkin.png"
+                  alt="Teresa Younkin"
+                  className="w-64 h-64 mx-auto rounded-2xl object-cover"
+                />
               </div>
               <div className="flex-grow">
                 <h2 className="text-2xl font-semibold text-navy mb-1">Teresa Younkin, MSHI</h2>
@@ -74,11 +76,13 @@ const About = () => {
             </div>
 
             {/* Jim */}
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
-              <div className="flex-shrink-0 w-full lg:w-64">
-                <div className="w-48 h-48 mx-auto lg:mx-0 rounded-2xl bg-gradient-to-br from-navy/20 to-primary/20 flex items-center justify-center">
-                  <span className="text-5xl font-bold text-navy">JY</span>
-                </div>
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+              <div className="flex-shrink-0">
+                <img
+                  src="/images/jim-younkin.jpg"
+                  alt="Jim Younkin"
+                  className="w-64 h-64 mx-auto rounded-2xl object-cover"
+                />
               </div>
               <div className="flex-grow">
                 <h2 className="text-2xl font-semibold text-navy mb-1">Jim Younkin, MBA</h2>
@@ -134,7 +138,7 @@ const About = () => {
             We help executives see it that way."
           </blockquote>
           <p className="text-xl text-primary font-semibold text-center mt-8">
-            That's why we focus on one thing: AI governance you can defend.
+            That's why we focus on one thing: decision confidence for healthcare AI.
           </p>
         </div>
       </section>
@@ -144,7 +148,7 @@ const About = () => {
         <div className="container-narrow text-center">
           <h2 className="text-navy-foreground mb-6">Ready to Work Together?</h2>
           <p className="text-xl text-navy-foreground/80 mb-8 max-w-2xl mx-auto">
-            Let's discuss how we can help you build AI governance you can defend.
+            Let's discuss how we can help you build decision confidence for healthcare AI.
           </p>
           <Button variant="cta" size="xl" asChild>
             <Link to="/contact">Start a Conversation</Link>

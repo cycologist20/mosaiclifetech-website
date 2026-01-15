@@ -36,7 +36,7 @@ const OurApproach = () => {
       <section className="section-padding bg-gradient-to-b from-secondary/50 to-background">
         <div className="container-narrow text-center">
           <p className="text-sm uppercase tracking-widest text-primary font-medium mb-4">
-            AI Governance You Can Defend
+            Decision Confidence for Healthcare AI
           </p>
           <h1 className="text-navy mb-6">Governance as Decision Integrity</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">

@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { Shield, Scale, Target, Eye, UserCheck, FileCheck, ArrowRight, Users, Gavel, ClipboardCheck } from "lucide-react";
+import { Shield, Scale, Target, Eye, UserCheck, FileCheck, FileText, ArrowRight, Users, Gavel, ClipboardCheck } from "lucide-react";
 
 const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-b from-secondary/50 to-background section-padding">
+      <section className="relative bg-gradient-to-br from-teal-light to-background section-padding">
         <div className="container-narrow text-center">
           <h1 className="text-primary text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
-            AI governance you can defend.
+            Decision Confidence for Healthcare AI
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto animate-fade-in" style={{ animationDelay: "0.1s" }}>
             We help healthcare executives build governance clarity that boards can see, surveyors can assess, and leaders can stand behind.
@@ -27,11 +27,8 @@ const Index = () => {
       <section className="section-padding bg-card">
         <div className="container-narrow">
           <h2 className="text-center mb-6">The Accountability Gap</h2>
-          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
+          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-16">
             Healthcare executives are increasingly accountable for AI-influenced decisions. But most organizations lack the clarity, visibility, and governance posture to defend that accountability when boards, regulators, or litigators ask hard questions.
-          </p>
-          <p className="text-base text-muted-foreground text-center max-w-3xl mx-auto mb-16">
-            The Joint Commission and Coalition for Health AI (CHAI) have released guidance that is reshaping expectations. This guidance isn't binding yet — but it's defining what "reasonable oversight" looks like. Organizations without a clear governance story will struggle to explain themselves.
           </p>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -49,6 +46,31 @@ const Index = () => {
               icon={<FileCheck className="h-8 w-8" />}
               title="Defensible Posture"
               description="If a decision goes wrong, can you demonstrate that governance was reasonable? The answer matters before the question is asked."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Core Principles Section */}
+      <section className="section-padding bg-cream">
+        <div className="container-narrow">
+          <h2 className="text-center mb-16">Core Principles</h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <PrincipleCard
+              icon={<Eye className="h-10 w-10" />}
+              title="Visibility Before Action"
+              description="Executives can't govern what they can't see. We start by surfacing where AI already influences decisions — often in places leadership doesn't realize."
+            />
+            <PrincipleCard
+              icon={<Shield className="h-10 w-10" />}
+              title="Accountability Without Paralysis"
+              description="Governance shouldn't freeze progress. We help organizations define clear decision rights so they can move forward with confidence, not fear."
+            />
+            <PrincipleCard
+              icon={<FileText className="h-10 w-10" />}
+              title="Evidence Over Assertion"
+              description="When boards or regulators ask hard questions, assertions aren't enough. We help you build the evidence trail that demonstrates reasonable oversight."
             />
           </div>
         </div>
@@ -83,7 +105,7 @@ const Index = () => {
       </section>
 
       {/* Who We Serve Section */}
-      <section className="section-padding bg-secondary/30">
+      <section className="section-padding bg-teal-light">
         <div className="container-narrow">
           <h2 className="text-center mb-6">Built for the Responsible AI Executive</h2>
           <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-16">
@@ -129,12 +151,14 @@ const Index = () => {
               title="CEO & Co-Founder"
               tagline="AI Governance & Healthcare Strategy"
               bio="20+ years translating complex AI and interoperability concepts into executive-ready strategies. HL7 Da Vinci contributor. Leadership in health data governance, federal programs, and organizational change."
+              image="/images/teresa-younkin.png"
             />
             <FounderCard
               name="Jim Younkin, MBA"
               title="CTO & Co-Founder"
               tagline="Federal Health IT & AI Systems Architect"
               bio="30+ years building healthcare infrastructure — from pioneering one of the nation's largest HIEs to leading AI implementation projects for ONC/ASTP. Deep expertise in what 'reasonable oversight' looks like at scale."
+              image="/images/jim-younkin.jpg"
             />
           </div>
           
@@ -186,6 +210,18 @@ function DifferentiatorCard({ icon, title, description }: { icon: React.ReactNod
   );
 }
 
+function PrincipleCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
+  return (
+    <div className="bg-card rounded-xl p-8 shadow-card border border-border/50 text-center">
+      <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 text-primary mb-6">
+        {icon}
+      </div>
+      <h3 className="text-xl font-semibold text-navy mb-4">{title}</h3>
+      <p className="text-muted-foreground">{description}</p>
+    </div>
+  );
+}
+
 function AudienceCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
   return (
     <div className="bg-card rounded-lg p-8 shadow-soft border border-border/50 hover:shadow-card transition-shadow">
@@ -196,14 +232,22 @@ function AudienceCard({ icon, title, description }: { icon: React.ReactNode; tit
   );
 }
 
-function FounderCard({ name, title, tagline, bio }: { name: string; title: string; tagline: string; bio: string }) {
+function FounderCard({ name, title, tagline, bio, image }: { name: string; title: string; tagline: string; bio: string; image?: string }) {
   return (
     <div className="flex flex-col items-center text-center md:flex-row md:text-left md:items-start gap-6">
-      <div className="w-32 h-32 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
-        <span className="text-3xl font-semibold text-primary">
-          {name.split(' ').map(n => n[0]).join('')}
-        </span>
-      </div>
+      {image ? (
+        <img
+          src={image}
+          alt={name}
+          className="w-32 h-32 rounded-full object-cover flex-shrink-0"
+        />
+      ) : (
+        <div className="w-32 h-32 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+          <span className="text-3xl font-semibold text-primary">
+            {name.split(' ').map(n => n[0]).join('')}
+          </span>
+        </div>
+      )}
       <div>
         <h3 className="text-xl font-semibold text-navy">{name}</h3>
         <p className="text-primary font-medium mb-1">{title}</p>

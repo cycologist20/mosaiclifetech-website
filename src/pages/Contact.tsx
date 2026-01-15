@@ -88,7 +88,7 @@ const Contact = () => {
                   Calendar scheduling widget will be embedded here
                 </p>
                 <Button variant="cta" asChild>
-                  <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
+                  <a href="https://on.sprintful.com/30-min-teresayounkin" target="_blank" rel="noopener noreferrer">
                     Book a 30-Minute Call
                   </a>
                 </Button>
@@ -203,11 +203,11 @@ const Contact = () => {
               <Linkedin className="h-5 w-5 text-primary" />
               <div className="text-sm">
                 <span className="text-muted-foreground">LinkedIn: </span>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                <a href="https://linkedin.com/in/teresayounkin" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                   Teresa
                 </a>
                 <span className="text-muted-foreground"> | </span>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                <a href="https://linkedin.com/in/jimryounkin" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                   Jim
                 </a>
               </div>

@@ -18,17 +18,8 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <nav className="container-wide flex h-16 items-center justify-between" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Link to="/" className="-m-1.5 p-1.5 flex items-center gap-3">
-            <MosaicLogo />
-            <div className="hidden sm:flex items-center gap-2">
-              <span className="text-sm font-semibold text-navy tracking-tight">
-                MOSAIC LIFE TECH
-              </span>
-              <span className="hidden lg:inline text-muted-foreground/60">|</span>
-              <span className="hidden lg:inline text-xs italic text-muted-foreground">
-                Healthcare AI. Governed with clarity.
-              </span>
-            </div>
+          <Link to="/" className="-m-1.5 p-1.5 flex items-center gap-2">
+            <img src="/images/mosaic-logo.png" alt="Mosaic Life Tech" className="h-10 w-auto" />
           </Link>
         </div>
         
@@ -73,7 +64,7 @@ export function Header() {
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-border">
             <div className="flex items-center justify-between">
               <Link to="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
-                <MosaicLogo />
+                <img src="/images/mosaic-logo.png" alt="Mosaic Life Tech" className="h-10 w-auto" />
               </Link>
               <button
                 type="button"
@@ -111,22 +102,6 @@ export function Header() {
         </div>
       )}
     </header>
-  );
-}
-
-function MosaicLogo() {
-  return (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="2" y="2" width="8" height="8" rx="1" fill="#2D9B9B"/>
-      <rect x="12" y="2" width="8" height="8" rx="1" fill="#E8974C"/>
-      <rect x="22" y="2" width="8" height="8" rx="1" fill="#1A3A4A"/>
-      <rect x="2" y="12" width="8" height="8" rx="1" fill="#E8974C"/>
-      <rect x="12" y="12" width="8" height="8" rx="1" fill="#1A3A4A"/>
-      <rect x="22" y="12" width="8" height="8" rx="1" fill="#2D9B9B"/>
-      <rect x="2" y="22" width="8" height="8" rx="1" fill="#1A3A4A"/>
-      <rect x="12" y="22" width="8" height="8" rx="1" fill="#2D9B9B"/>
-      <rect x="22" y="22" width="8" height="8" rx="1" fill="#E8974C"/>
-    </svg>
   );
 }
 
