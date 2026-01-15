@@ -68,7 +68,7 @@ const OurApproach = () => {
       </section>
 
       {/* Why Now */}
-      <section className="section-padding bg-secondary/30">
+      <section className="section-padding bg-gradient-to-br from-teal-light to-background">
         <div className="container-narrow">
           <h2 className="text-center mb-12">Why Now</h2>
           
