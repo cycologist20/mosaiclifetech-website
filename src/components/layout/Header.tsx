@@ -8,6 +8,7 @@ const navigation = [
   { name: "Who We Help", href: "/who-we-help" },
   { name: "Our Approach", href: "/our-approach" },
   { name: "About", href: "/about" },
+  { name: "Insights", href: "/insights" },
 ];
 
 export function Header() {
