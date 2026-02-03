@@ -14,6 +14,7 @@ import NotFound from './pages/NotFound';
 import InsightsIndex from './pages/insights/Index';
 import AutonomousAIAgents from './pages/insights/AutonomousAIAgents';
 import ChatGPTHealth from './pages/insights/ChatGPTHealth';
+import CommitteeFallacy from './pages/insights/CommitteeFallacy';
 
 const queryClient = new QueryClient();
 
@@ -49,6 +50,10 @@ const App = () => (
           <Route
             path="/insights/chatgpt-health-patient-readiness"
             element={<ChatGPTHealth />}
+          />
+          <Route
+            path="/insights/committee-fallacy-ai-governance"
+            element={<CommitteeFallacy />}
           />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

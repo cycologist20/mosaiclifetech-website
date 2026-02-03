@@ -19,21 +19,29 @@ const insights = [
     date: "January 21, 2026",
     category: "Executive Briefing",
   },
+  {
+    slug: "committee-fallacy-ai-governance",
+    title: "The Committee Fallacy in AI Governance",
+    description:
+      "Why the traditional committee model creates an accountability vacuum in healthcare AI governance, and what to do about it.",
+    date: "January 20, 2026",
+    category: "Article",
+  },
 ];
 
 const InsightsIndex = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-b from-secondary/50 to-background">
+      <section className="pt-12 pb-6 md:pt-16 md:pb-8 bg-gradient-to-b from-secondary/50 to-background">
         <div className="container-narrow text-center">
-          <h1 className="text-navy mb-6">Insights</h1>
+          <h1 className="text-navy mb-4">Insights</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">Practical perspectives on AI governance for healthcare leaders.</p>
         </div>
       </section>
 
       {/* Articles List */}
-      <section className="section-padding">
+      <section className="pt-6 pb-16 md:pt-8 md:pb-20">
         <div className="container-narrow">
           <div className="space-y-6">
             {insights.map((article) => (
