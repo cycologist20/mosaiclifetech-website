@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { Button } from "@/components/ui/button";
 
 const insights = [
   {
@@ -80,6 +82,52 @@ function BriefingCover({ title, subtitle, category, accentColor }: {
   );
 }
 
+/**
+ * Email capture section for briefing notifications.
+ * UI-only for now — mailing list integration TBD.
+ */
+function EmailCapture() {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email.trim()) {
+      // TODO: Connect to mailing list provider once confirmed
+      console.log("Subscribe email:", email);
+      setSubmitted(true);
+    }
+  };
+
+  return (
+    <div className="mt-14 max-w-xl mx-auto text-center">
+      <h3 className="text-navy text-lg font-semibold mb-2">Stay informed</h3>
+      <p className="text-muted-foreground text-sm mb-5">
+        Get notified when new briefings are published. No spam, no sales pitches.
+      </p>
+      {submitted ? (
+        <p className="text-primary text-sm font-medium">
+          Thank you. You'll be notified when new briefings are published.
+        </p>
+      ) : (
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 items-center justify-center">
+          <input
+            type="email"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Your email address"
+            className="w-full sm:w-72 px-4 py-2.5 rounded-lg border border-border bg-background text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
+          />
+          <Button type="submit" variant="cta" size="default">
+            Subscribe
+          </Button>
+        </form>
+      )}
+    </div>
+  );
+}
+
 const InsightsIndex = () => {
   return (
     <Layout>
@@ -98,7 +146,7 @@ const InsightsIndex = () => {
         <div className="container-narrow">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-muted-foreground leading-relaxed">
-              These briefings are written for healthcare executives navigating AI adoption, governance risk, and accountability. Each document focuses on operational implications — designed to support board, compliance, and leadership discussions.
+              These briefings are written for healthcare executives navigating AI adoption, governance risk, and accountability. Each document focuses on operational implications and is designed to support board, compliance, and leadership discussions.
             </p>
           </div>
         </div>
@@ -125,11 +173,14 @@ const InsightsIndex = () => {
                     {/* Card Content */}
                     <div className="flex-1 p-6 md:p-8 flex flex-col justify-center">
                       {/* Meta row */}
-                      <div className="flex items-center gap-3 text-sm text-muted-foreground mb-3">
-                        <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold tracking-wide">
-                          {article.category}
-                        </span>
-                        <span className="text-xs">{article.date}</span>
+                      <div className="flex flex-col gap-1 text-sm text-muted-foreground mb-3">
+                        <div className="flex items-center gap-3">
+                          <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold tracking-wide">
+                            {article.category}
+                          </span>
+                          <span className="text-xs">{article.date}</span>
+                        </div>
+                        <span className="text-xs text-muted-foreground">By Jim Younkin</span>
                       </div>
 
                       {/* Title */}
@@ -156,7 +207,7 @@ const InsightsIndex = () => {
 
                       {/* Read signal */}
                       <span className="inline-flex items-center text-primary text-sm font-medium mt-4 group-hover:gap-2 transition-all duration-200">
-                        Review briefing
+                        Read the briefing
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                         </svg>
@@ -168,8 +219,11 @@ const InsightsIndex = () => {
             ))}
           </div>
 
+          {/* Email Capture */}
+          <EmailCapture />
+
           {/* Series Authority Signal */}
-          <div className="mt-12 text-center">
+          <div className="mt-10 text-center">
             <p className="text-sm text-muted-foreground/70 italic">
               Part of Mosaic Life Tech's ongoing executive briefing series on AI governance in healthcare.
             </p>
